@@ -1,0 +1,14 @@
+syntax="proto3";
+package pb;
+
+message GetStudentsResponse {
+    bool success = 1;
+    string message = 2;
+    repeated Student students = 3;
+}
+
+message Student {
+    string id = 1;  // Unique ID generated using UUID.
+    string name = 2;
+    string email = 3;
+  }

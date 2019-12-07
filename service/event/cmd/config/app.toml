@@ -1,0 +1,13 @@
+[cockroach]
+Host        = "localhost"
+Port        = "26257"
+Password    = "eduwizpass"
+User        = "eduwiz"
+Database    = "eduwizdb"
+
+[nats]
+User        = "product"
+Password    = "gopher"
+Queue       = "EVENT-QUEUE"
+Name        = "Nats Requester"
+WaitTimeInMins = 10

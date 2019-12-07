@@ -1,0 +1,16 @@
+syntax = "proto3";
+package pb;
+
+message Event {
+    string event_id = 1;
+    string event_type=2;
+    string aggregate_id = 3;
+    string aggregate_type=4;
+    string data = 7;
+}
+
+  message Response {
+    bool success = 1;
+    string message = 2;
+    string data = 3;
+}
