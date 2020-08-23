@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/shyam-unnithan/eduwiz/pb"
-	"github.com/shyam-unnithan/eduwiz/util"
+	"github.com/shyam-unnithan/go-micro/pb"
+	"github.com/shyam-unnithan/go-micro/util"
 )
 
 //StudentStore - Datastore to persist student information

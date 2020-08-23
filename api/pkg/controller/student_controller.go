@@ -2,7 +2,7 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/shyam-unnithan/eduwiz/util"
+	"github.com/shyam-unnithan/go-micro/util"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -11,7 +11,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
 	"github.com/satori/go.uuid"
-	"github.com/shyam-unnithan/eduwiz/pb"
+	"github.com/shyam-unnithan/go-micro/pb"
 )
 
 //StudentController manage student

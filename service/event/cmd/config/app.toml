@@ -1,9 +1,9 @@
 [cockroach]
 Host        = "localhost"
 Port        = "26257"
-Password    = "eduwizpass"
-User        = "eduwiz"
-Database    = "eduwizdb"
+Password    = "go-micropass"
+User        = "go-micro"
+Database    = "go-microdb"
 
 [nats]
 User        = "product"

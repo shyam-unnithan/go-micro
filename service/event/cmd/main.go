@@ -2,18 +2,18 @@ package main
 
 import (
 	"flag"
-	"github.com/shyam-unnithan/eduwiz/util"
+	"github.com/shyam-unnithan/go-micro/util"
 	"log"
 	"os"
 	"os/signal"
 	"time"
 
-	"github.com/shyam-unnithan/eduwiz/service/event/pkg/datastore"
+	"github.com/shyam-unnithan/go-micro/service/event/pkg/datastore"
 
 	"github.com/golang/protobuf/proto"
 	"github.com/nats-io/nats.go"
-	"github.com/shyam-unnithan/eduwiz/pb"
-	_ "github.com/shyam-unnithan/eduwiz/service/event/pkg/bootstrapper"
+	"github.com/shyam-unnithan/go-micro/pb"
+	_ "github.com/shyam-unnithan/go-micro/service/event/pkg/bootstrapper"
 )
 
 const (

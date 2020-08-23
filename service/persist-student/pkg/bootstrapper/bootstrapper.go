@@ -1,7 +1,7 @@
 package bootstrapper
 
 import (
-	"github.com/shyam-unnithan/eduwiz/util"
+	"github.com/shyam-unnithan/go-micro/util"
 	"github.com/spf13/viper"
 	"strconv"
 )

@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/shyam-unnithan/eduwiz/api/pkg/router"
-	_ "github.com/shyam-unnithan/eduwiz/api/pkg/bootstrapper"
+	"github.com/shyam-unnithan/go-micro/api/pkg/router"
+	_ "github.com/shyam-unnithan/go-micro/api/pkg/bootstrapper"
 )
 
 func main() {

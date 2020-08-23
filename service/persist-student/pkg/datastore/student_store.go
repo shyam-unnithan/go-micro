@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/pkg/errors"
-	"github.com/shyam-unnithan/eduwiz/pb"
-	"github.com/shyam-unnithan/eduwiz/util"
+	"github.com/shyam-unnithan/go-micro/pb"
+	"github.com/shyam-unnithan/go-micro/util"
 )
 
 //StudentStore - Datastore to persist student information
@@ -15,7 +15,7 @@ type StudentStore struct{}
 //Create - Create a repository record in cockroach database
 func (studentStore StudentStore) Create(student pb.Student) (pb.Student, error) {
 	sqlStatement := `INSERT INTO students (id, name, email) 
-						VALUES ($1, $2, $3)
+						VALUES ($2, $2, $3)
 						RETURNING id;`
 	var id string
 	err := getStore().Db.QueryRow(sqlStatement, student.Id, student.Name, student.Email).Scan(&id)

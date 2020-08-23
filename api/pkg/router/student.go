@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/shyam-unnithan/eduwiz/api/pkg/controller"
+	"github.com/shyam-unnithan/go-micro/api/pkg/controller"
 
 	"github.com/gorilla/mux"
 )
