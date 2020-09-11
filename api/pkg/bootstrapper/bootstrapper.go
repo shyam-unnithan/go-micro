@@ -8,11 +8,11 @@ import (
 
 func init() {
 	viper.SetConfigName("app")
-	viper.AddConfigPath("cmd/config")
+	viper.AddConfigPath("config")
 
 	err := viper.ReadInConfig()
 	if err != nil {
-		util.Logger.Fatal("config file not found: ", err)
+		util.Logger.Fatal("Config file not found: ", err)
 	}
 
 	//Configure NATS authentication information
