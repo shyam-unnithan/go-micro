@@ -1,4 +1,0 @@
-[nats]
-User        = "product"
-Password    = "gopher"
-Queue       = "NATS-RPLY-22"
