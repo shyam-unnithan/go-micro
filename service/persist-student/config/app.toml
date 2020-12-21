@@ -1,0 +1,13 @@
+[cockroach]
+Host        = "localhost"
+Port        = "26257"
+Password    = "go-micropass"
+User        = "go-micro"
+Database    = "go-microdb"
+
+[nats]
+User        = "product"
+Password    = "gopher"
+Queue       = "PERSIST-STUDENT"
+Name        = "Nats Responder"
+WaitTimeInMinutes = 10
