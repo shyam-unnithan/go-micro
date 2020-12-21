@@ -1,5 +1,5 @@
 build:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64	go build -a -installsuffix cgo -o event-service
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o event-service ./cmd/main.go
 
 run:
 	docker run -e MICRO_REGISTRY=mdns event-service
