@@ -8,7 +8,7 @@ import (
 
 func init() {
 	viper.SetConfigName("app")
-	viper.AddConfigPath("cmd/config")
+	viper.AddConfigPath("config")
 
 	err := viper.ReadInConfig()
 	if err != nil {
