@@ -1,13 +1,28 @@
 build:
-	mkdir bin
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o bin/api ./cmd/main.go
-	cp -rf ./config ./bin
-run:
-	docker run -e MICRO_REGISTRY=mdns api
+# Ensure you have used export GOPATH
+	echo "GOPATH: ${GOPATH}"
+	mkdir ${GOPATH}/bin/api
+	go build -o ${GOPATH}/bin/api/cmd ./cmd/main.go
+	cp -rf ./config ${GOPATH}/bin/api
 
-image:	build
+compile:
+# Ensure you have used export GOPATH
+	mkdir -p bin/api
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags "-s -w" -installsuffix cgo -o bin/api/cmd ./cmd/main.go
+	cp -rf ./config bin/api
+	cp -rf cmd ${GOPATH}/bin/api
+
+run:
+#	docker run -e MICRO_REGISTRY=mdns api
+
+image:	
+	build
 	docker build -t api .
 
 clean:
-	-rm -rf ./bin
-	-docker rmi api:latest
+	rm -rf ${GOPATH}/bin/api 
+	rm -rf ./bin
+	
+dockerclean:
+	docker rmi api:latest
+
