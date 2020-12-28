@@ -7,6 +7,7 @@ build:
 
 compile:
 # Ensure you have used export GOPATH
+	$(MAKE) clean
 	mkdir -p bin/api
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags "-s -w" -installsuffix cgo -o bin/api/cmd ./cmd/main.go
 	cp -rf ./config bin/api
@@ -14,9 +15,11 @@ compile:
 
 run:
 #	docker run -e MICRO_REGISTRY=mdns api
+	$(MAKE) image
+	docker run --name api --network gomicro api
 
 image:	
-	build
+	$(MAKE) compile	
 	docker build -t api .
 
 clean:

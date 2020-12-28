@@ -1,23 +1,24 @@
 package util
 
 import (
-	"github.com/nats-io/nats.go"
 	"log"
 	"time"
+
+	"github.com/nats-io/nats.go"
 )
 
 type StreamConfig struct {
 	User, Password, URL, Queue, Name string
-	WaitInMinutes  int
+	WaitInMinutes                    int
 }
 
 type Stream struct {
-	cfg StreamConfig
+	cfg  StreamConfig
 	Conn *nats.Conn
 }
 
 func NewStream(cfg StreamConfig) (Stream, error) {
-	stream :=  Stream{}
+	stream := Stream{}
 	var nc *nats.Conn
 	var err error
 

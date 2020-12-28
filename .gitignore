@@ -1,2 +1,3 @@
-#ignore all bin folders **/bin
-#Ignore all Protobuf go files **/*.pb.go
+**/bin
+*.pb.go
+cockroach-data

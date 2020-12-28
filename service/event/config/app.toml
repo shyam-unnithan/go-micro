@@ -1,4 +1,5 @@
 [nats]
+URL         = "nats://nats:4222"
 User        = "product"
 Password    = "gopher"
 Queue       = "NATS-RPLY-22"

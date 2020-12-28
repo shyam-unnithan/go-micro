@@ -1,9 +1,10 @@
 package bootstrapper
 
 import (
+	"strconv"
+
 	"github.com/shyam-unnithan/go-micro/util"
 	"github.com/spf13/viper"
-	"strconv"
 )
 
 func init() {
@@ -27,7 +28,8 @@ func init() {
 	util.NatsConfig.Password = viper.GetString("nats.Password")
 	util.NatsConfig.Queue = viper.GetString("nats.Queue")
 	util.NatsConfig.Name = viper.GetString("nats.Name")
-	util.NatsConfig.WaitTimeInMinutes,err = strconv.Atoi(viper.GetString("nats.WaitTimeInMintues"))
+	util.NatsConfig.URL = viper.GetString("nats.URL")
+	util.NatsConfig.WaitTimeInMinutes, err = strconv.Atoi(viper.GetString("nats.WaitTimeInMintues"))
 	if err != nil {
 		util.NatsConfig.WaitTimeInMinutes = 0
 	}
