@@ -6,6 +6,7 @@ User        = "go-micro"
 Database    = "go-microdb"
 
 [nats]
+URI         = "nats://nats:4222"
 User        = "product"
 Password    = "gopher"
 Queue       = "PERSIST-STUDENT"

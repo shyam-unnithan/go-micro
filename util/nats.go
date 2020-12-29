@@ -7,16 +7,19 @@ import (
 	"github.com/nats-io/nats.go"
 )
 
+//StreamConfig - Structure for NATS config info
 type StreamConfig struct {
-	User, Password, URL, Queue, Name string
+	User, Password, URI, Queue, Name string
 	WaitInMinutes                    int
 }
 
+//Stream - Structure to hold NATS config and conn
 type Stream struct {
 	cfg  StreamConfig
 	Conn *nats.Conn
 }
 
+//NewStream is to create a NATS Stream
 func NewStream(cfg StreamConfig) (Stream, error) {
 	stream := Stream{}
 	var nc *nats.Conn
@@ -32,8 +35,8 @@ func NewStream(cfg StreamConfig) (Stream, error) {
 	opts = append(opts, nats.UserInfo(cfg.User, cfg.Password))
 
 	//Connect to NATS
-	if cfg.URL != "" {
-		nc, err = nats.Connect(cfg.URL, opts...)
+	if cfg.URI != "" {
+		nc, err = nats.Connect(cfg.URI, opts...)
 	} else {
 		nc, err = nats.Connect(nats.DefaultURL, opts...)
 	}

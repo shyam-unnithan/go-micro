@@ -2,15 +2,16 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/shyam-unnithan/go-micro/util"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"time"
 
+	"github.com/shyam-unnithan/go-micro/util"
+
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
-	"github.com/satori/go.uuid"
+	uuid "github.com/satori/go.uuid"
 	"github.com/shyam-unnithan/go-micro/pb"
 )
 
@@ -108,9 +109,9 @@ func getStream() util.Stream {
 	config := util.StreamConfig{
 		User:     util.NatsConfig.User,
 		Password: util.NatsConfig.Password,
-		URL:      util.NatsConfig.URL,
+		URI:      util.NatsConfig.URI,
 		Queue:    util.NatsConfig.Queue,
-		Name: "Nats Requester",
+		Name:     "Nats Requester",
 	}
 
 	stream, err := util.NewStream(config)

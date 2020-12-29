@@ -16,10 +16,11 @@ compile:
 run:
 #	docker run -e MICRO_REGISTRY=mdns api
 	$(MAKE) image
+	$(MAKE) dockerclean
 	docker run --name api --network gomicro api
 
 image:	
-	$(MAKE) compile	
+	$(MAKE) compile
 	docker build -t api .
 
 clean:
@@ -27,5 +28,5 @@ clean:
 	rm -rf ./bin
 	
 dockerclean:
-	docker rmi api:latest
+	docker rm api
 

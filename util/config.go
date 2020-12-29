@@ -10,8 +10,8 @@ type Configuration struct {
 
 //NatsConfiguration - Configuration for NATS server
 type NatsConfiguration struct {
-	User, Password, URL, Queue, Name string
-	WaitTimeInMinutes int
+	User, Password, URI, Queue, Name string
+	WaitTimeInMinutes                int
 }
 
 // AppConfig holds the configurations used for web app

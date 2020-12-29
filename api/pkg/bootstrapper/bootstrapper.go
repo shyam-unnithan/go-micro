@@ -21,7 +21,7 @@ func init() {
 	util.NatsConfig.Password = viper.GetString("nats.Password")
 	util.NatsConfig.Queue = viper.GetString("nats.Queue")
 	util.NatsConfig.Name = viper.GetString("nats.Name")
-	util.NatsConfig.URL = viper.GetString("nats.URL")
+	util.NatsConfig.URI = viper.GetString("nats.URI")
 	util.NatsConfig.WaitTimeInMinutes, err = strconv.Atoi(viper.GetString("nats.WaitTimeInMintues"))
 	if err != nil {
 		util.NatsConfig.WaitTimeInMinutes = 0

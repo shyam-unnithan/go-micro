@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
-	"github.com/shyam-unnithan/go-micro/util"
 	"log"
 	"os"
 	"os/signal"
 	"time"
+
+	"github.com/shyam-unnithan/go-micro/util"
 
 	"github.com/shyam-unnithan/go-micro/service/event/pkg/datastore"
 
@@ -96,11 +97,11 @@ func main() {
 //Function to get EventStream
 func getStream() util.Stream {
 	config := util.StreamConfig{
-		User:     util.NatsConfig.User,
-		Password: util.NatsConfig.Password,
-		URL:      util.NatsConfig.URL,
-		Queue:    util.NatsConfig.Queue,
-		Name:	util.NatsConfig.Name,
+		User:          util.NatsConfig.User,
+		Password:      util.NatsConfig.Password,
+		URI:           util.NatsConfig.URI,
+		Queue:         util.NatsConfig.Queue,
+		Name:          util.NatsConfig.Name,
 		WaitInMinutes: util.NatsConfig.WaitTimeInMinutes,
 	}
 

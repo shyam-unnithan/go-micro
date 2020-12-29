@@ -27,5 +27,5 @@ clean:
 	rm -rf ./bin
 	
 dockerclean:
-	docker rmi event:latest
+	docker rm event
 

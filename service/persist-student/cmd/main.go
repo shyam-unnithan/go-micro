@@ -2,15 +2,16 @@ package main
 
 import (
 	"flag"
+	"log"
+	"os"
+	"os/signal"
+
 	"github.com/golang/protobuf/proto"
 	"github.com/nats-io/nats.go"
 	"github.com/shyam-unnithan/go-micro/pb"
 	_ "github.com/shyam-unnithan/go-micro/service/persist-student/pkg/bootstrapper"
 	"github.com/shyam-unnithan/go-micro/service/persist-student/pkg/datastore"
 	"github.com/shyam-unnithan/go-micro/util"
-	"log"
-	"os"
-	"os/signal"
 )
 
 const (
@@ -73,11 +74,11 @@ func main() {
 //Function to get EventStream
 func getStream() util.Stream {
 	config := util.StreamConfig{
-		User:     util.NatsConfig.User,
-		Password: util.NatsConfig.Password,
-		URL:      util.NatsConfig.URL,
-		Queue:    util.NatsConfig.Queue,
-		Name:	util.NatsConfig.Name,
+		User:          util.NatsConfig.User,
+		Password:      util.NatsConfig.Password,
+		URI:           util.NatsConfig.URI,
+		Queue:         util.NatsConfig.Queue,
+		Name:          util.NatsConfig.Name,
 		WaitInMinutes: util.NatsConfig.WaitTimeInMinutes,
 	}
 
