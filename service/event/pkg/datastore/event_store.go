@@ -1,10 +1,11 @@
 package datastore
 
 import (
+	"log"
+
 	"github.com/pkg/errors"
 	"github.com/shyam-unnithan/go-micro/pb"
 	"github.com/shyam-unnithan/go-micro/util"
-	"log"
 )
 
 //studentStore - Datastore to persist student information
@@ -13,7 +14,7 @@ type EventStore struct{}
 //Create - Create a repository record in cockroach database
 func (eventStore EventStore) Create(event pb.Event) (pb.Event, error) {
 	sqlStatement := `INSERT INTO events (id, type, aggregate, aggregate_type, data) 
-						VALUES ($2, $2, $3, $4, $5)
+						VALUES ($1, $2, $3, $4, $5)
 						RETURNING id;`
 	var id string
 	err := getStore().Db.QueryRow(sqlStatement, event.EventId, event.EventType, event.AggregateId, event.AggregateType, event.Data).Scan(&id)

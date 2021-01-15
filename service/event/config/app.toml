@@ -3,3 +3,10 @@ URI         = "nats://nats:4222"
 User        = "product"
 Password    = "gopher"
 Queue       = "NATS-RPLY-22"
+
+[cockroach]
+Host        = "roach1"
+Port        = "26257"
+Password    = "root"
+User        = "root"
+Database    = "defaultdb"

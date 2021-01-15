@@ -1,9 +1,9 @@
 [cockroach]
-Host        = "localhost"
+Host        = "roach1"
 Port        = "26257"
-Password    = "go-micropass"
-User        = "go-micro"
-Database    = "go-microdb"
+Password    = "root"
+User        = "root"
+Database    = "defaultdb"
 
 [nats]
 URI         = "nats://nats:4222"

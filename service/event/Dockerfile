@@ -1,7 +1,7 @@
 ########################################
 # Build image for the api service
 ########################################
-FROM golang:1.15.6-alpine
+FROM builder
 
 # Import the user and groups
 # This will be used to run the service
